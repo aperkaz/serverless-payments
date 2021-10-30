@@ -1,2 +1,3 @@
 # serverless-payments
-Serverless payments with Stripe and Netlify functions
+
+Serverless payments with Stripe and Netlify functions.

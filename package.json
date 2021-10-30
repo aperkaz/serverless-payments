@@ -1,0 +1,26 @@
+{
+  "name": "serverless-payments",
+  "version": "1.0.0",
+  "description": "Serverless payments with Stripe and Netlify functions.",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "dev": "netlify dev",
+    "netlify:open": "netlify open",
+    "deploy": "git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aperkaz/serverless-payments.git"
+  },
+  "author": "Alain Perkaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aperkaz/serverless-payments/issues"
+  },
+  "homepage": "https://github.com/aperkaz/serverless-payments#readme",
+  "devDependencies": {
+    "netlify-cli": "^6.14.7"
+  }
+}
