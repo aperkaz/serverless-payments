@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<html>
+  <head>
+    <title>Serverless payments</title>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body style="height: 100vh">
+    <div
+      style="
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1 style="text-align: center">🤣 Payment success 🤣</h1>
+      <button id="back-button">Take me back</button>
+      <script type="text/javascript">
+        var backButton = document.getElementById("back-button");
+
+        backButton.addEventListener("click", function () {
+          window.history.back();
+        });
+      </script>
+    </div>
+  </body>
+</html>

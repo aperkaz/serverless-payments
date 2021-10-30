@@ -20,7 +20,7 @@
     "url": "https://github.com/aperkaz/serverless-payments/issues"
   },
   "homepage": "https://github.com/aperkaz/serverless-payments#readme",
-  "devDependencies": {
-    "netlify-cli": "^6.14.7"
+  "dependencies": {
+    "stripe": "^8.184.0"
   }
 }

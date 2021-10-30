@@ -3,17 +3,52 @@
 <html>
   <head>
     <title>Serverless payments</title>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body style="height: 100vh">
     <div
       style="
         height: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       "
     >
       <h1 style="text-align: center">💸💸 Serverless Payment example 💸💸</h1>
+      <button id="checkout-button">Trigger payment</button>
+      <script type="text/javascript">
+        // Create an instance of the Stripe object with your publishable API key
+        var stripe = Stripe(
+          "pk_test_51IMfMQDCdPpxKeemxC3ObfzgTtts1mw0qf2FXUqDrIjkzdlLZRGAY2oZX4kgmDO5w1n1l5glu1TfmsNfyivrajnU00BeaDUr9u"
+        );
+        var checkoutButton = document.getElementById("checkout-button");
+
+        checkoutButton.addEventListener("click", function () {
+          // Create a new Checkout Session using the server-side endpoint you
+          // created in step 3.
+          fetch("/api/stripe", {
+            method: "POST",
+          })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (session) {
+              return stripe.redirectToCheckout({ sessionId: session.id });
+            })
+            .then(function (result) {
+              // If `redirectToCheckout` fails due to a browser or network
+              // error, you should display the localized error message to your
+              // customer using `error.message`.
+              if (result.error) {
+                alert(result.error.message);
+              }
+            })
+            .catch(function (error) {
+              console.error("Error:", error);
+            });
+        });
+      </script>
     </div>
   </body>
 </html>
