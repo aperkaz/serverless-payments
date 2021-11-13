@@ -2,4 +2,4 @@
 
 Serverless payments with Stripe and Netlify functions.
 
-Companion code for the LogRocket article.
+Companion code for the article.
